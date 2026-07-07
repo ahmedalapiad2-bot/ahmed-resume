@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Resume of {{ profile.name }} — Senior Full-Stack and AI Engineer." />
+    <title>{{ profile.name }} | Resume</title>
+    <link rel="icon" type="image/png" href="static/favicon.png" />
+    <link rel="shortcut icon" href="static/favicon.png" />
+    <link rel="apple-touch-icon" href="static/favicon.png" />
+    <meta property="og:title" content="{{ profile.name }} | Resume" />
+    <meta property="og:description" content="Resume of {{ profile.name }} — Senior Full-Stack and AI Engineer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="static/og-image.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="{{ profile.name }} | Resume" />
+    <meta property="twitter:description" content="Resume of {{ profile.name }} — Senior Full-Stack and AI Engineer." />
+    <meta property="twitter:image" content="static/og-image.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="static/style.css" />
+</head>
+
+<body>
+    {% set icon_map = {'email': 'fa-solid fa-envelope', 'whatsapp': 'fa-brands fa-whatsapp', 'linkedin': 'fa-brands
+    fa-linkedin', 'github': 'fa-brands fa-github', 'portfolio': 'fa-solid fa-globe'} %}
+    {% set label_map = {'email': 'Email', 'whatsapp': 'WhatsApp', 'linkedin': 'LinkedIn', 'github': 'GitHub',
+    'portfolio': 'Portfolio'} %}
+    <main class="resume-shell">
+        <aside class="sidebar">
+            <div class="sidebar-card profile-card">
+                {% if has_profile_image %}
+                <div class="photo-wrap">
+                    <img src="{{ profile_image_path }}" alt="Profile photo" />
+                </div>
+                {% endif %}
+                <h1>{{ profile.name }}</h1>
+                <p class="role">{{ profile.job_title }}</p>
+                <p class="location">{{ profile.location }}</p>
+                <a class="portfolio-pill action-btn action-btn-primary" href="{{ profile.portfolio_url }}"
+                    target="_blank" rel="noopener noreferrer"><span class="action-icon" aria-hidden="true"><i
+                            class="fa-solid fa-globe"></i></span><span>Open Website</span></a>
+            </div>
+            <div class="sidebar-card sidebar-spacer-card" aria-hidden="true"></div>
+
+            <section class="sidebar-card">
+                <h2>Contact</h2>
+                <ul class="contact-list">
+                    {% for item in contact_items %}
+                    <li>
+                        <a class="action-btn contact-link" href="{{ item.value }}" target="_blank"
+                            rel="noopener noreferrer">
+                            <span class="action-icon" aria-hidden="true"><i
+                                    class="{{ icon_map[item.type] or 'fa-solid fa-arrow-up-right-from-square' }}"></i></span>
+                            <span>{{ label_map[item.type] or item.type|title }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <div class="sidebar-card sidebar-spacer-card" aria-hidden="true"></div>
+
+            <section class="sidebar-card">
+                <h2>Core Focus</h2>
+                <ul class="stack-list">
+                    {% for item in profile.focus_areas %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <div class="sidebar-card sidebar-spacer-card" aria-hidden="true"></div>
+
+            <section class="sidebar-card">
+                <h2>Education</h2>
+                <ul class="stack-list">
+                    {% for item in education_items %}
+                    <li>
+                        <strong>{{ item.institution }}</strong>
+                        <span>{{ item.degree }} · {{ item.period }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <div class="sidebar-card sidebar-spacer-card" aria-hidden="true"></div>
+
+            <section class="sidebar-card">
+                <h2>Languages</h2>
+                <ul class="stack-list">
+                    {% for language in languages %}
+                    <li><strong>{{ language.name }}</strong><span>{{ language.level }}</span></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </aside>
+
+        <section class="main-content">
+            <header class="hero-card">
+                <p class="eyebrow">Product-minded engineer</p>
+                <h2>{{ profile.name }}</h2>
+                <p class="hero-title">{{ profile.job_title }}</p>
+                <p class="hero-position">{{ profile.positioning }}</p>
+                <div class="hero-links">
+                    {% for item in contact_items %}
+                    <a class="hero-link action-btn" href="{{ item.value }}" target="_blank" rel="noopener noreferrer">{{
+                        label_map[item.type] or item.type|title }}</a>
+                    {% endfor %}
+                    <a class="hero-link hero-link-primary action-btn" href="{{ profile.portfolio_url }}" target="_blank"
+                        rel="noopener noreferrer">Website</a>
+                </div>
+            </header>
+
+            <section class="content-card summary-card">
+                <div class="section-heading">
+                    <h3>Professional Summary</h3>
+                </div>
+                <div class="summary-grid">
+                    {% for point in profile.summary_points %}
+                    <p class="summary-point">{{ point }}</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="content-card projects-card">
+                <div class="section-heading">
+                    <h3>Featured Projects</h3>
+                    <p>Selected products built end to end</p>
+                </div>
+                <div class="project-list">
+                    {% for project in project_items %}
+                    <article class="project-card">
+                        <div class="project-visual">
+                            <span class="project-badge">{{ project.project_type or 'Product' }}</span>
+                            <strong>{{ project.name }}</strong>
+                            <span>{{ project.period }}</span>
+                        </div>
+                        <div class="project-copy">
+                            <div class="project-meta">
+                                <span class="meta-chip">{{ project.role }}</span>
+                                <span class="meta-chip">{{ project.project_type }}</span>
+                            </div>
+                            <p class="project-summary">{{ project.summary }}</p>
+                            <div class="tech-row">
+                                {% for tech in project.stack %}
+                                <span class="tech-badge">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                            <div class="project-grid">
+                                <div>
+                                    <h4>Key Features</h4>
+                                    <ul class="bullet-list">
+                                        {% for feature in project.features %}
+                                        <li>{{ feature }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4>Business Value</h4>
+                                    <ul class="bullet-list">
+                                        {% for item in project.impact %}
+                                        <li>{{ item }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="project-links">
+                                {% if project.links.github %}
+                                <a class="action-btn action-btn-secondary" href="{{ project.links.github }}"
+                                    target="_blank" rel="noopener noreferrer">GitHub</a>
+                                {% endif %}
+                                {% if project.links.portfolio %}
+                                <a class="action-btn action-btn-primary" href="{{ project.links.portfolio }}"
+                                    target="_blank" rel="noopener noreferrer">Portfolio</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="content-card">
+                <div class="section-heading">
+                    <h3>Technical Skills</h3>
+                </div>
+                <div class="skill-groups">
+                    {% for group in profile.skill_groups %}
+                    <div class="skill-group">
+                        <h4>{{ group.name }}</h4>
+                        <div class="chip-list">
+                            {% for skill in group['items'] %}
+                            <span class="chip subtle">{{ skill }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="content-card">
+                <div class="section-heading">
+                    <h3>Professional Experience</h3>
+                </div>
+                <div class="timeline-list">
+                    <article class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-head">
+                                <h4>Senior Full-Stack &amp; AI Engineer</h4>
+                                <span>2022 – Present</span>
+                            </div>
+                            <p class="company">Independent Software Engineer</p>
+                            <ul>
+                                <li>Designed and developed four production-grade SaaS platforms across AI, business
+                                    intelligence, restaurant management, and service operations.</li>
+                                <li>Built scalable backend systems using FastAPI, Node.js, PostgreSQL, and RESTful APIs.
+                                </li>
+                                <li>Developed AI-powered automation, analytics, and decision-support solutions for
+                                    business workflows.</li>
+                                <li>Engineered responsive React and Next.js applications with modern UI/UX practices.
+                                </li>
+                                <li>Containerized and deployed applications using Docker and cloud-native development
+                                    workflows.</li>
+                                <li>Managed the complete software lifecycle from architecture and implementation to
+                                    deployment and maintenance.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
