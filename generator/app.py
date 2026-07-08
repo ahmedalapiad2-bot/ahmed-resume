@@ -64,13 +64,24 @@ class ResumeGenerator:
         except Exception:
             self._render_pdf_fallback(output_path)
             return
+        # Determine which HTML file Playwright should load for PDF rendering.
+        # Prefer the authoritative output file (site/index.html) that `generate()` writes,
+        # otherwise fall back to a sibling HTML filename based on the PDF path.
+        html_file = OUTPUT_DIR / "index.html"
+        if not html_file.exists():
+            html_file = output_path.with_suffix(".html")
+            # If we have the rendered HTML content in memory, try writing it so Playwright can load it.
+            try:
+                html_file.write_text(html, encoding="utf-8")
+            except Exception:
+                pass
 
         try:
             with sync_playwright() as playwright:
                 browser = playwright.chromium.launch(headless=True)
                 page = browser.new_page()
                 page.emulate_media(media="print")
-                page.goto(output_path.with_suffix(".html").resolve().as_uri(), wait_until="networkidle")
+                page.goto(html_file.resolve().as_uri(), wait_until="networkidle")
                 page.pdf(
                     path=str(output_path),
                     format="A4",
