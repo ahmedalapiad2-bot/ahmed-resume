@@ -31,7 +31,7 @@ class ResumeGenerator:
 
         rendered_html = self.render_html()
         output_name = self._output_name()
-        html_path = OUTPUT_DIR / f"{output_name}_Resume.html"
+        html_path = OUTPUT_DIR / "index.html"
         pdf_path = OUTPUT_DIR / f"{output_name}_Resume.pdf"
 
         html_path.write_text(rendered_html, encoding="utf-8")

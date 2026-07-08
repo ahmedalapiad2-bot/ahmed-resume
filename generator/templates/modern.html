@@ -4,19 +4,84 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Resume of {{ profile.name }} — Senior Full-Stack and AI Engineer." />
-    <title>{{ profile.name }} | Resume</title>
+    <meta name="description"
+        content="Ahmed FS Dev is a Full-Stack Developer and AI Engineer with a portfolio of SaaS and AI-driven products. His resume highlights product-focused engineering." />
+    <meta name="keywords"
+        content="Ahmed FS Dev, Full-Stack Developer, AI Engineer, SaaS resume, cloud-native developer, Cairo software engineer" />
+    <meta name="author" content="Ahmed FS Dev" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ahmed-resume-2ega.vercel.app/" />
+    <title>{{ profile.name }} | {{ profile.job_title }} | Resume</title>
     <link rel="icon" type="image/png" href="static/favicon.png" />
     <link rel="shortcut icon" href="static/favicon.png" />
     <link rel="apple-touch-icon" href="static/favicon.png" />
-    <meta property="og:title" content="{{ profile.name }} | Resume" />
-    <meta property="og:description" content="Resume of {{ profile.name }} — Senior Full-Stack and AI Engineer." />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content="{{ profile.name }} | {{ profile.job_title }} | Resume" />
+    <meta property="og:description"
+        content="Ahmed FS Dev is a Full-Stack Developer and AI Engineer with a portfolio of SaaS and AI-driven products. His resume highlights product-focused engineering." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="static/og-image.png" />
+    <meta property="og:url" content="https://ahmed-resume-2ega.vercel.app/" />
+    <meta property="og:site_name" content="Ahmed FS Dev" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://ahmed-resume-2ega.vercel.app/static/og-image.png" />
+    <meta property="og:image:secure_url" content="https://ahmed-resume-2ega.vercel.app/static/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="{{ profile.name }} | Resume" />
-    <meta property="twitter:description" content="Resume of {{ profile.name }} — Senior Full-Stack and AI Engineer." />
-    <meta property="twitter:image" content="static/og-image.png" />
+    <meta property="twitter:url" content="https://ahmed-resume-2ega.vercel.app/" />
+    <meta property="twitter:creator" content="@AhmedFSDev" />
+    <meta property="twitter:title" content="{{ profile.name }} | {{ profile.job_title }} | Resume" />
+    <meta property="twitter:description"
+        content="Ahmed FS Dev is a Full-Stack Developer and AI Engineer with a portfolio of SaaS and AI-driven products. His resume highlights product-focused engineering." />
+    <meta property="twitter:image" content="https://ahmed-resume-2ega.vercel.app/static/og-image.png" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://ahmed-resume-2ega.vercel.app/#person",
+          "name": "{{ profile.name }}",
+          "alternateName": "Ahmed FS Dev",
+          "url": "https://ahmed-resume-2ega.vercel.app/",
+          "image": "https://ahmed-resume-2ega.vercel.app/static/og-image.png",
+          "jobTitle": "{{ profile.job_title }}",
+          "description": "Ahmed FS Dev is a Full-Stack Developer and AI Engineer with a portfolio of SaaS and AI-driven products. His resume highlights product-focused engineering.",
+          "nationality": "Egypt",
+          "knowsAbout": [
+            "Full-Stack Development",
+            "Artificial Intelligence",
+            "SaaS",
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Python",
+            "Node.js",
+            "PostgreSQL",
+            "API Development",
+            "Automation"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/ahmed-fs-dev",
+            "https://github.com/ahmedalapiad2-bot",
+            "https://ahmed-fs-dev-saas.vercel.app/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://ahmed-resume-2ega.vercel.app/#website",
+          "name": "Ahmed FS Dev Resume",
+          "url": "https://ahmed-resume-2ega.vercel.app/",
+          "inLanguage": "en",
+          "publisher": {
+            "@id": "https://ahmed-resume-2ega.vercel.app/#person"
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -33,11 +98,9 @@
     <main class="resume-shell">
         <aside class="sidebar">
             <div class="sidebar-card profile-card">
-                {% if has_profile_image %}
                 <div class="photo-wrap">
-                    <img src="{{ profile_image_path }}" alt="Profile photo" />
+                    <img src="static/profile-photo.jpg" alt="Profile photo" />
                 </div>
-                {% endif %}
                 <h1>{{ profile.name }}</h1>
                 <p class="role">{{ profile.job_title }}</p>
                 <p class="location">{{ profile.location }}</p>
@@ -205,30 +268,23 @@
                     <h3>Professional Experience</h3>
                 </div>
                 <div class="timeline-list">
+                    {% for exp in experience_items %}
                     <article class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-head">
-                                <h4>Senior Full-Stack &amp; AI Engineer</h4>
-                                <span>2022 – Present</span>
+                                <h4>{{ exp.role }}</h4>
+                                <span>{{ exp.period }}</span>
                             </div>
-                            <p class="company">Independent Software Engineer</p>
+                            <p class="company">{{ exp.company }}</p>
                             <ul>
-                                <li>Designed and developed four production-grade SaaS platforms across AI, business
-                                    intelligence, restaurant management, and service operations.</li>
-                                <li>Built scalable backend systems using FastAPI, Node.js, PostgreSQL, and RESTful APIs.
-                                </li>
-                                <li>Developed AI-powered automation, analytics, and decision-support solutions for
-                                    business workflows.</li>
-                                <li>Engineered responsive React and Next.js applications with modern UI/UX practices.
-                                </li>
-                                <li>Containerized and deployed applications using Docker and cloud-native development
-                                    workflows.</li>
-                                <li>Managed the complete software lifecycle from architecture and implementation to
-                                    deployment and maintenance.</li>
+                                {% for highlight in exp.highlights %}
+                                <li>{{ highlight }}</li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </article>
+                    {% endfor %}
                 </div>
             </section>
         </section>

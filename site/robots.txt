@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahmed-resume-2ega.vercel.app/sitemap.xml

@@ -1,6 +1,6 @@
 {
   "name": "Ahmed FS Dev",
-  "job_title": "Senior Full-Stack & AI Engineer",
+  "job_title": "Full-Stack Developer",
   "location": "Cairo, Egypt",
   "portfolio_url": "https://ahmed-fs-dev-saas.vercel.app/",
   "positioning": "I design and ship full-stack product experiences that combine reliability, clean architecture, and measurable business impact.",
@@ -83,25 +83,16 @@
   ],
   "experience": [
     {
-      "role": "Senior Full-Stack & AI Engineer",
-      "company": "Independent Full-Stack Engineer",
-
-      "period": "2022 - Present",
+      "role": "Full-Stack Developer",
+      "company": "Independent / Personal Projects",
+      "period": "Late 2024 – Present",
       "highlights": [
-        "Designed and developed four production-grade SaaS platforms.",
-        "Built scalable backend services using FastAPI, Node.js, and PostgreSQL.",
-        "Developed AI-powered business automation, analytics, and decision-support systems.",
-        "Delivered complete products from UI/UX to deployment using Docker and cloud infrastructure."
-      ]
-    },
-    {
-      "role": "Backend Engineer",
-      "company": "Bright Commerce",
-      "period": "2020 - 2022",
-      "highlights": [
-        "Built resilient APIs and automation workflows used by operations teams.",
-        "Optimized core services and improved system performance under real business load.",
-        "Raised engineering standards through reusable architecture patterns and mentorship."
+        "Designed and developed DeciCore, a SaaS platform for business intelligence and operational decision support.",
+        "Built SmartOrder, a SaaS platform for restaurant management, online ordering, and workflow automation.",
+        "Developed LeadMorph, an AI-powered data processing and workflow automation platform using FastAPI and PostgreSQL.",
+        "Built CleanEx, a service management and booking platform with responsive React and Next.js interfaces.",
+        "Developed ResumeForge, an AI-assisted resume builder with automated HTML and PDF generation.",
+        "Implemented REST APIs, authentication, responsive UI, database integration, and AI features across multiple personal SaaS projects."
       ]
     }
   ],
