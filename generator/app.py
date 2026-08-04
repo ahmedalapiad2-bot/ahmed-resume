@@ -303,6 +303,7 @@ class ResumeGenerator:
                 "theme": "software",
                 "title": "Software Engineering",
                 "href": "software/",
+                "icon": "</>",
                 "status": "Systems online",
                 "description": "Build systems, products, automation, and intelligent workflows.",
             },
@@ -312,6 +313,7 @@ class ResumeGenerator:
                 "theme": "data",
                 "title": "Data Entry & Data Processing",
                 "href": "data-entry/",
+                "icon": "▤",
                 "status": "Records aligned",
                 "description": "Transform scattered records into clean, reliable structure.",
             },
@@ -321,6 +323,7 @@ class ResumeGenerator:
                 "theme": "production",
                 "title": "Production",
                 "href": "production/",
+                "icon": "⚙",
                 "status": "Flow stabilized",
                 "description": "Support operational flow with consistency, quality, and focus.",
             },
@@ -340,17 +343,18 @@ class ResumeGenerator:
         if not profiles:
             return []
         labels = {
-            "email": "Email",
-            "whatsapp": "WhatsApp",
-            "linkedin": "LinkedIn",
-            "github": "GitHub",
-            "portfolio": "Portfolio",
+            "email": ("Email", "✉"),
+            "whatsapp": ("WhatsApp", "◉"),
+            "linkedin": ("LinkedIn", "in"),
+            "github": ("GitHub", "⌘"),
+            "portfolio": ("Portfolio", "◎"),
         }
         contacts = profiles[0][1].get("contacts", [])
-        return [
-            {"label": labels.get(item.get("type", ""), item.get("label", "")), "value": item.get("value", "#")}
-            for item in contacts
-        ]
+        items = []
+        for item in contacts:
+            label, icon = labels.get(item.get("type", ""), (item.get("label", ""), "•"))
+            items.append({"label": label, "icon": icon, "value": item.get("value", "#")})
+        return items
 
     @staticmethod
     def _wrap_text(text: str, width: int) -> list[str]:

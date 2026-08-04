@@ -40,6 +40,20 @@
 
 <body class="nexus-page">
     <a class="skip-link" href="#career-paths">Skip to career paths</a>
+    <header class="topbar" aria-label="Career Nexus navigation">
+        <a class="brand-mark" href="./" aria-label="Career Nexus home">
+            <span class="brand-symbol" aria-hidden="true"><i></i><i></i><i></i></span>
+            <strong>Career <span>Nexus</span></strong>
+        </a>
+        <nav class="topnav" aria-label="Page sections">
+            <a href="./">Home</a>
+            <a href="#career-paths">Paths</a>
+            <a href="software/">Software</a>
+            <a href="data-entry/">Data</a>
+            <a href="production/">Production</a>
+        </nav>
+        <a class="download-pill" href="Career_Nexus.pdf"><span aria-hidden="true">↓</span> Download PDF</a>
+    </header>
     <main class="nexus-shell" data-nexus-root>
         <div class="ambient-field" aria-hidden="true"></div>
 
@@ -50,15 +64,18 @@
                 <p class="hero-lede">One professional identity, focused into three tailored career directions.</p>
                 <div class="hero-actions" aria-label="Contact links">
                     {% for item in contacts %}
-                    <a href="{{ item.value }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+                    <a href="{{ item.value }}" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">{{ item.icon }}</span>{{ item.label }}
+                    </a>
                     {% endfor %}
-                    <a href="Career_Nexus.pdf">PDF</a>
+                    <a href="Career_Nexus.pdf"><span aria-hidden="true">▣</span>PDF</a>
                 </div>
             </section>
 
             <section class="hero-portrait" aria-label="Profile">
                 <div class="portrait-frame">
                     <img src="static/profile-photo.jpg" alt="Ahmed FS Dev profile photo" />
+                    <span class="online-badge"><i></i>Online</span>
                 </div>
                 <div class="identity-card">
                     <span>Available paths</span>
@@ -72,15 +89,33 @@
             <a class="career-card theme-{{ world.theme }}" href="{{ world.href }}" data-world="{{ world.theme }}"
                 aria-label="Open {{ world.title }} resume">
                 <span class="card-light" aria-hidden="true"></span>
-                <span class="resume-preview" aria-hidden="true">
-                    <span class="preview-sidebar"></span>
-                    <span class="preview-main">
-                        <i></i><i></i><i></i><i></i>
+                <span class="profession-preview preview-{{ world.theme }}" aria-hidden="true">
+                    {% if world.theme == "software" %}
+                    <span class="code-card">
+                        <i>1&nbsp;&nbsp;const profile = async career =&gt; {</i>
+                        <i>2&nbsp;&nbsp;&nbsp;&nbsp;const systems = build(career);</i>
+                        <i>3&nbsp;&nbsp;&nbsp;&nbsp;return deploy(systems);</i>
+                        <i>4&nbsp;&nbsp;}</i>
                     </span>
-                    <span class="preview-project">
-                        <i></i><i></i><i></i>
+                    <span class="language-stack"><b>JS</b><b>API</b><b>AI</b></span>
+                    {% elif world.theme == "data" %}
+                    <span class="data-flow">
+                        <i>CSV</i><i>XLSX</i><i>DB</i>
                     </span>
+                    <span class="data-table">
+                        <b>ID</b><b>Name</b><b>Status</b><b>Score</b>
+                        <span>001</span><span>Ahmed</span><span>✓</span><span>98%</span>
+                        <span>002</span><span>Sara</span><span>✓</span><span>94%</span>
+                        <span>003</span><span>Omar</span><span>✓</span><span>91%</span>
+                    </span>
+                    {% else %}
+                    <span class="process-flow">
+                        <i>▣</i><i>✓</i><i>⌁</i><i>↗</i>
+                    </span>
+                    <span class="kpi-card"><b>Performance</b><strong>+24%</strong><em></em></span>
+                    {% endif %}
                 </span>
+                <span class="corner-icon" aria-hidden="true">{{ world.icon }}</span>
                 <span class="card-content">
                     <span class="card-index">{{ world.index }}</span>
                     <strong>{{ world.title }}</strong>
