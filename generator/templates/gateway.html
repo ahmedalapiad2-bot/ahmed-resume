@@ -80,13 +80,13 @@
         </section>
 
         <section class="world-stage" id="career-worlds" aria-label="Career worlds">
-            
-            <a class="world-portal theme-software" href="software/" data-world="software"
-                aria-label="Enter Software Engineering">
+            {% for world in worlds %}
+            <a class="world-portal theme-{{ world.theme }}" href="{{ world.href }}" data-world="{{ world.theme }}"
+                aria-label="Enter {{ world.title }}">
                 <span class="route-line" aria-hidden="true"></span>
                 <span class="portal-glass" aria-hidden="true"></span>
-                <span class="portal-preview preview-software" aria-hidden="true">
-                    
+                <span class="portal-preview preview-{{ world.theme }}" aria-hidden="true">
+                    {% if world.theme == "software" %}
                     <span class="mini-window">
                         <span class="mini-bar"></span>
                         <span class="code-line line-a"></span>
@@ -97,57 +97,15 @@
                         <span class="api-node node-c"></span>
                         <span class="chart-bars"><i></i><i></i><i></i><i></i></span>
                     </span>
-                    
-                </span>
-                <span class="portal-copy">
-                    <span class="portal-index">01</span>
-                    <span class="portal-title">Software Engineering</span>
-                    <span class="portal-description">Build systems, products, automation, and intelligent workflows.</span>
-                    <span class="portal-status">Systems online</span>
-                </span>
-                <span class="enter-trace">Enter world</span>
-            </a>
-            
-            <a class="world-portal theme-data" href="data-entry/" data-world="data"
-                aria-label="Enter Data Entry &amp; Data Processing">
-                <span class="route-line" aria-hidden="true"></span>
-                <span class="portal-glass" aria-hidden="true"></span>
-                <span class="portal-preview preview-data" aria-hidden="true">
-                    
+                    {% elif world.theme == "data" %}
                     <span class="sheet-preview">
-                        
+                        {% for row in range(6) %}
                         <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
-                        
-                        <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
-                        
-                        <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
-                        
-                        <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
-                        
-                        <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
-                        
-                        <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
-                        
+                        {% endfor %}
                         <span class="validation-pulse"></span>
                         <span class="sort-line"></span>
                     </span>
-                    
-                </span>
-                <span class="portal-copy">
-                    <span class="portal-index">02</span>
-                    <span class="portal-title">Data Entry &amp; Data Processing</span>
-                    <span class="portal-description">Transform scattered records into clean, reliable structure.</span>
-                    <span class="portal-status">Records aligned</span>
-                </span>
-                <span class="enter-trace">Enter world</span>
-            </a>
-            
-            <a class="world-portal theme-production" href="production/" data-world="production"
-                aria-label="Enter Production">
-                <span class="route-line" aria-hidden="true"></span>
-                <span class="portal-glass" aria-hidden="true"></span>
-                <span class="portal-preview preview-production" aria-hidden="true">
-                    
+                    {% else %}
                     <span class="production-preview">
                         <span class="process-line"></span>
                         <span class="stage stage-a"></span>
@@ -157,31 +115,23 @@
                         <span class="unit unit-b"></span>
                         <span class="quality-meter"><i></i><i></i><i></i></span>
                     </span>
-                    
+                    {% endif %}
                 </span>
                 <span class="portal-copy">
-                    <span class="portal-index">03</span>
-                    <span class="portal-title">Production</span>
-                    <span class="portal-description">Support operational flow with consistency, quality, and focus.</span>
-                    <span class="portal-status">Flow stabilized</span>
+                    <span class="portal-index">{{ world.index }}</span>
+                    <span class="portal-title">{{ world.title }}</span>
+                    <span class="portal-description">{{ world.description }}</span>
+                    <span class="portal-status">{{ world.status }}</span>
                 </span>
                 <span class="enter-trace">Enter world</span>
             </a>
-            
+            {% endfor %}
         </section>
 
         <nav class="utility-dock" aria-label="External links">
-            
-            <a href="mailto:ahmedalapiad2@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-            
-            <a href="https://wa.me/201550534011" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            
-            <a href="https://www.linkedin.com/in/ahmed-fs-dev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            
-            <a href="https://github.com/ahmedalapiad2-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
-            
-            <a href="https://ahmed-fs-dev-saas.vercel.app/" target="_blank" rel="noopener noreferrer">Portfolio</a>
-            
+            {% for item in contacts %}
+            <a href="{{ item.value }}" target="_blank" rel="noopener noreferrer">{{ item.label }}</a>
+            {% endfor %}
             <a href="Career_Nexus.pdf">Interactive PDF</a>
         </nav>
     </main>

@@ -1,0 +1,102 @@
+{
+  "name": "Ahmed FS Dev",
+  "job_title": "Production Assistant - Entry Level",
+  "route": "production",
+  "theme": "production",
+  "location": "Cairo, Egypt",
+  "portfolio_url": "https://ahmed-fs-dev-saas.vercel.app/",
+  "positioning": "I support operational flow with discipline, consistency, quality awareness, and readiness to learn production processes.",
+  "summary_points": [
+    "Reliable entry-level production candidate with strong attention to process, timing, and team coordination.",
+    "Comfortable following structured workflows, quality checks, and repeatable operational routines.",
+    "Able to support production environments through organization, focus, and consistent execution.",
+    "Motivated to learn hands-on procedures and contribute to efficient daily operations."
+  ],
+  "focus_areas": [
+    "Operational discipline",
+    "Quality awareness",
+    "Workflow support",
+    "Team coordination"
+  ],
+  "contacts": [
+    {
+      "type": "email",
+      "label": "ahmedalapiad2@gmail.com",
+      "value": "mailto:ahmedalapiad2@gmail.com"
+    },
+    {
+      "type": "whatsapp",
+      "label": "+20 155 053 4011",
+      "value": "https://wa.me/201550534011"
+    },
+    {
+      "type": "linkedin",
+      "label": "linkedin.com/in/ahmed-fs-dev",
+      "value": "https://www.linkedin.com/in/ahmed-fs-dev"
+    },
+    {
+      "type": "github",
+      "label": "github.com/ahmedalapiad2-bot",
+      "value": "https://github.com/ahmedalapiad2-bot"
+    },
+    {
+      "type": "portfolio",
+      "label": "ahmed-fs-dev-saas.vercel.app",
+      "value": "https://ahmed-fs-dev-saas.vercel.app/"
+    }
+  ],
+  "skill_groups": [
+    {
+      "name": "Operations",
+      "items": ["Workflow support", "Task discipline", "Process following", "Time awareness"]
+    },
+    {
+      "name": "Quality",
+      "items": ["Visual checks", "Consistency", "Issue reporting", "Clean handoff"]
+    },
+    {
+      "name": "Teamwork",
+      "items": ["Communication", "Reliability", "Learning speed", "Shift readiness"]
+    },
+    {
+      "name": "Digital Awareness",
+      "items": ["Documentation", "Basic data tracking", "Online tools", "Report preparation"]
+    }
+  ],
+  "languages": [
+    {"name": "English", "level": "Intermediate"},
+    {"name": "Arabic", "level": "Native"}
+  ],
+  "education": [
+    {
+      "institution": "Higher Institute of Administrative Sciences - El Katameya",
+      "degree": "Business Information Systems (BIS)",
+      "period": "2027"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Operations-Oriented Project Builder",
+      "company": "Independent / Personal Projects",
+      "period": "Late 2024 - Present",
+      "highlights": [
+        "Built structured workflows for booking, service handling, and operational management projects.",
+        "Practiced organizing tasks into clear stages with consistent inputs, outputs, and quality checks.",
+        "Worked with process-driven product ideas involving scheduling, customer requests, and delivery flow.",
+        "Developed a reliability-focused approach to documentation, repeatable routines, and final review."
+      ]
+    }
+  ],
+  "workflow": [
+    "Prepare work area",
+    "Follow process stage",
+    "Check quality indicators",
+    "Coordinate handoff",
+    "Report completion"
+  ],
+  "achievements": [
+    "Demonstrated strong process thinking through service, booking, and operations platform projects.",
+    "Built comfort with structured routines, documentation, and quality-conscious delivery.",
+    "Combined technical organization with practical reliability and a readiness to learn."
+  ]
+}

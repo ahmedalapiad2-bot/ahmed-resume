@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Ahmed FS Dev | Interactive Career Nexus PDF</title>
+    <link rel="stylesheet" href="static/nexus.css" />
+</head>
+
+<body class="pdf-document">
+    <section class="pdf-gateway" id="gateway">
+        <div class="pdf-core">
+            <p class="section-kicker">Interactive Career Nexus</p>
+            <h1>Ahmed FS Dev</h1>
+            <p>Choose a professional world. Each panel links to its focused resume section.</p>
+        </div>
+        <div class="pdf-worlds">
+            {% for world in worlds %}
+            <a class="pdf-world theme-{{ world.theme }}" href="#{{ world.route }}-resume">
+                <span>{{ world.index }}</span>
+                <strong>{{ world.title }}</strong>
+                <em>{{ world.description }}</em>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+    {% for item in pdf_profiles %}
+    <section class="pdf-resume-section theme-{{ item.theme }}" id="{{ item.route }}-resume">
+        <h1>{{ item.title }}</h1>
+        <h2>{{ item.profile.name }} | {{ item.profile.job_title }}</h2>
+        <p class="pdf-positioning">{{ item.profile.positioning }}</p>
+
+        <h2>Professional Summary</h2>
+        <ul>
+            {% for point in item.profile.summary_points %}
+            <li>{{ point }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Core Capabilities</h2>
+        <div class="pdf-skill-grid">
+            {% for group in item.profile.skill_groups %}
+            <div>
+                <h3>{{ group.name }}</h3>
+                <p>{{ group["items"] | join(", ") }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>Experience</h2>
+        {% for exp in item.profile.experience %}
+        <article>
+            <h3>{{ exp.role }}</h3>
+            <p><strong>{{ exp.company }}</strong> | {{ exp.period }}</p>
+            <ul>
+                {% for highlight in exp.highlights %}
+                <li>{{ highlight }}</li>
+                {% endfor %}
+            </ul>
+        </article>
+        {% endfor %}
+
+        {% if item.profile.projects %}
+        <h2>Selected Projects</h2>
+        {% for project in item.profile.projects %}
+        <article>
+            <h3>{{ project.name }}</h3>
+            <p>{{ project.summary }}</p>
+            <p><strong>Stack:</strong> {{ project.stack | join(", ") }}</p>
+        </article>
+        {% endfor %}
+        {% endif %}
+
+        {% if item.profile.workflow %}
+        <h2>Workflow</h2>
+        <ol>
+            {% for step in item.profile.workflow %}
+            <li>{{ step }}</li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+    </section>
+    {% endfor %}
+</body>
+
+</html>

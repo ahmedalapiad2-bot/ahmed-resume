@@ -1,0 +1,197 @@
+{
+  "name": "Ahmed FS Dev",
+  "job_title": "Full-Stack Developer",
+  "location": "Cairo, Egypt",
+  "portfolio_url": "https://ahmed-fs-dev-saas.vercel.app/",
+  "positioning": "I design and ship full-stack product experiences that combine reliability, clean architecture, and measurable business impact.",
+  "summary_points": [
+    "Building production-grade SaaS platforms with strong product thinking and engineering discipline.",
+    "Creating AI-enabled workflows, automation systems, and data-driven experiences for real users.",
+    "Delivering reliable backend services, polished interfaces, and scalable cloud-native systems.",
+    "Bridging product, design, and engineering to turn complex requirements into dependable software."
+  ],
+  "focus_areas": [
+    "SaaS product delivery",
+    "AI-assisted systems",
+    "Automation and data workflows",
+    "Cloud-native architecture"
+  ],
+  "contacts": [
+    {
+      "type": "email",
+      "label": "ahmedalapiad2@gmail.com",
+      "value": "mailto:ahmedalapiad2@gmail.com"
+    },
+    {
+      "type": "whatsapp",
+      "label": "+20 155 053 4011",
+      "value": "https://wa.me/201550534011"
+    },
+    {
+      "type": "linkedin",
+      "label": "linkedin.com/in/ahmed-fs-dev",
+      "value": "https://www.linkedin.com/in/ahmed-fs-dev"
+    },
+    {
+      "type": "github",
+      "label": "github.com/ahmedalapiad2-bot",
+      "value": "https://github.com/ahmedalapiad2-bot"
+    },
+    {
+      "type": "portfolio",
+      "label": "ahmed-fs-dev-saas.vercel.app",
+      "value": "https://ahmed-fs-dev-saas.vercel.app/"
+    }
+  ],
+  "skill_groups": [
+    {
+      "name": "Frontend",
+      "items": ["HTML5", "CSS3", "Jinja2", "Responsive UI", "Design systems"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Python", "Django", "FastAPI", "Flask", "REST APIs"]
+    },
+    {
+      "name": "AI",
+      "items": ["Prompt design", "Automation", "Workflow orchestration", "Intelligent product features"]
+    },
+    {
+      "name": "Databases & Cloud",
+      "items": ["PostgreSQL", "Docker", "AWS", "SQL", "Scalable services"]
+    },
+    {
+      "name": "DevOps & Tools",
+      "items": ["CI/CD", "Testing", "WeasyPrint", "Git", "Observability"]
+    }
+  ],
+  "languages": [
+    {"name": "English", "level": "Intermediate"},
+    {"name": "Arabic", "level": "Native"}
+
+  ],
+  "education": [
+    {
+      "institution": "Higher Institute of Administrative Sciences – El Katameya",
+      "degree": "Business Information Systems (BIS)",
+      "period": "2027"
+    }
+  ],
+  "": [
+    "",
+    ""
+  ],
+  "experience": [
+    {
+      "role": "Full-Stack Developer",
+      "company": "Independent / Personal Projects",
+      "period": "Late 2024 – Present",
+      "highlights": [
+        "Designed and developed DeciCore, a SaaS platform for business intelligence and operational decision support.",
+        "Built SmartOrder, a SaaS platform for restaurant management, online ordering, and workflow automation.",
+        "Developed LeadMorph, an AI-powered data processing and workflow automation platform using FastAPI and PostgreSQL.",
+        "Built CleanEx, a service management and booking platform with responsive React and Next.js interfaces.",
+        "Developed ResumeForge, an AI-assisted resume builder with automated HTML and PDF generation.",
+        "Implemented REST APIs, authentication, responsive UI, database integration, and AI features across multiple personal SaaS projects."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "DeciCore AI",
+      "period": "2026",
+      "project_type": "Decision Intelligence Platform",
+      "role": "Full-Stack Engineer",
+      "summary": "Enterprise decision intelligence platform that converts raw business data into operational insights through AI-assisted analysis, risk detection, and decision support workflows.",
+      "stack": ["React", "Next.js", "Tailwind CSS", "Node.js", "Express", "Git"],
+      "features": [
+        "Built a multi-step data ingestion and processing experience",
+        "Implemented analytics dashboards for risk and opportunity visibility",
+        "Delivered secure user management and responsive product interfaces"
+      ],
+      "impact": [
+        "Improved decision support for operational teams",
+        "Reduced manual analysis effort through structured workflows",
+        "Made complex data accessible through a polished product experience"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://mostaql.com/portfolio/3543330-منصة-decicore-نظام-متكامل-لتحليل-البيانات-ودعم-اتخاذ-القرار-التشغيلي"
+      }
+    },
+    {
+      "name": "SmartOrder",
+      "period": "2026",
+      "project_type": "SaaS Platform",
+      "role": "Full-Stack Engineer",
+      "summary": "Full SaaS platform for restaurant operations, customer ordering, and business automation with centralized administration and real-time monitoring.",
+      "stack": ["React", "Next.js", "Tailwind CSS", "Node.js", "Express", "Real-time Data Sync"],
+      "features": [
+        "Built a multi-tenant admin and restaurant management workflow",
+        "Implemented subscription controls, payments, and platform settings",
+        "Delivered a customer-facing experience with live operational visibility"
+      ],
+      "impact": [
+        "Supported scalable restaurant operations through a centralized platform",
+        "Improved service automation for business owners and staff",
+        "Enabled live monitoring of activity, revenue, and system health"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://mostaql.com/portfolio/3543403-منصة-smartorder-نظام-saas-متكامل-لإدارة-المطاعم-وأتمتة-خدمة-العملاء"
+      }
+    },
+    {
+      "name": "LeadMorph",
+      "period": "2026",
+      "project_type": "Data Processing Platform",
+      "role": "Full-Stack Engineer",
+      "summary": "Cloud-based data processing platform that automates data cleaning, transformation, validation, and workflow execution for large-scale business datasets.",
+      "stack": ["Python", "FastAPI", "Pydantic", "Next.js", "React", "Tailwind CSS"],
+      "features": [
+        "Implemented robust backend APIs for large file ingestion and processing",
+        "Built interactive data validation and cleaning workflows",
+        "Created a responsive UI for monitoring uploads and processing status"
+      ],
+      "impact": [
+        "Reduced manual effort in data preparation and cleanup",
+        "Improved reliability of downstream data workflows",
+        "Made large dataset processing more structured and repeatable"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://mostaql.com/portfolio/3543802-منصة-leadmorph-نظام-سحابي-متكامل-لأتمتة-تنقية-ومعالجة-البيانات-الضخمة-data-processing-platform"
+      }
+    },
+    {
+      "name": "CleanEx",
+      "period": "2026",
+      "project_type": "Booking & Operations Platform",
+      "role": "Full-Stack Engineer",
+      "summary": "Modern booking and operations platform for cleaning service companies, covering reservations, scheduling, customer management, and service delivery workflows.",
+      "stack": ["React", "Next.js", "TypeScript", "CSS3", "Git", "GitHub"],
+      "features": [
+        "Built a multi-step booking flow for service requests",
+        "Implemented responsive booking and customer management screens",
+        "Structured the product for future admin, pricing, and operations expansion"
+      ],
+      "impact": [
+        "Improved the end-to-end customer booking experience",
+        "Reduced friction in service scheduling and request handling",
+        "Created a scalable foundation for operations-driven product growth"
+      ],
+      "links": {
+        "github": "https://github.com/ahmedalapiad2-bot",
+        "portfolio": "https://mostaql.com/portfolio/3555217-cleanex-منصة-متكاملة-لإدارة-خدمات-التنظيف-والحجوزات-الإلكترونية"
+      }
+    }
+  ],
+  "achievements": [
+    "Delivered mission-critical products used by global teams across multiple regions.",
+    "Recognized for combining strong engineering execution with polished product presentation.",
+    "Improved onboarding speed and developer productivity through reusable architecture patterns."
+  ],
+  "technical_expertise": [
+    "Python", "Django", "FastAPI", "Flask", "REST APIs", "SQL", "Docker", "AWS", "CI/CD", "Testing", "HTML/CSS", "PDF Generation"
+  ]
+}

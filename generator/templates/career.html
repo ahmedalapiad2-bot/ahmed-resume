@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ profile.name }} - {{ profile.job_title }} focused resume." />
+    <meta name="author" content="{{ profile.name }}" />
+    <meta name="robots" content="index, follow" />
+    <title>{{ profile.name }} | {{ profile.job_title }}</title>
+    <link rel="icon" type="image/png" href="static/favicon.png" />
+    <meta name="theme-color" content="#05070b" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="stylesheet" href="static/nexus.css" />
+    <script src="static/nexus.js" defer></script>
+</head>
+
+<body class="nexus-page career-page theme-{{ theme }}">
+    <a class="skip-link" href="#resume-content">Skip to resume content</a>
+    <main class="career-shell" data-nexus-root>
+        <div class="nexus-atmosphere" aria-hidden="true">
+            <div class="aura aura-{{ theme }}"></div>
+            <div class="grid-plane grid-plane-a"></div>
+            <div class="signal-beam signal-beam-a"></div>
+            <div class="cursor-light"></div>
+        </div>
+
+        <header class="career-hero">
+            <nav class="breadcrumb" aria-label="Gateway navigation">
+                <a href="../">Career Nexus</a>
+                <span>{{ profile.job_title }}</span>
+            </nav>
+            <div class="career-hero-grid">
+                <section class="career-identity" aria-labelledby="career-title">
+                    <p class="section-kicker">{{ label }}</p>
+                    <h1 id="career-title">{{ profile.name }}</h1>
+                    <p class="career-title">{{ profile.job_title }}</p>
+                    <p class="career-position">{{ profile.positioning }}</p>
+                    <div class="career-actions">
+                        <a href="{{ pdf_name }}" class="nexus-action">Open PDF</a>
+                        <a href="mailto:ahmedalapiad2@gmail.com" class="nexus-action nexus-action-quiet">Contact</a>
+                    </div>
+                </section>
+                <section class="career-instrument" aria-label="{{ label }} live preview">
+                    <div class="portal-preview preview-{{ theme }}" aria-hidden="true">
+                        {% if theme == "data" %}
+                        <span class="sheet-preview is-large">
+                            {% for row in range(8) %}
+                            <span class="sheet-row"><i></i><i></i><i></i><i></i></span>
+                            {% endfor %}
+                            <span class="validation-pulse"></span>
+                            <span class="sort-line"></span>
+                        </span>
+                        {% else %}
+                        <span class="production-preview is-large">
+                            <span class="process-line"></span>
+                            <span class="stage stage-a"></span>
+                            <span class="stage stage-b"></span>
+                            <span class="stage stage-c"></span>
+                            <span class="unit unit-a"></span>
+                            <span class="unit unit-b"></span>
+                            <span class="quality-meter"><i></i><i></i><i></i></span>
+                        </span>
+                        {% endif %}
+                    </div>
+                </section>
+            </div>
+        </header>
+
+        <section class="career-content" id="resume-content">
+            <section class="nexus-panel">
+                <div class="panel-heading">
+                    <p class="section-kicker">Profile</p>
+                    <h2>Professional Summary</h2>
+                </div>
+                <div class="summary-orbit">
+                    {% for point in profile.summary_points %}
+                    <p>{{ point }}</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="nexus-panel">
+                <div class="panel-heading">
+                    <p class="section-kicker">Focus</p>
+                    <h2>Core Capabilities</h2>
+                </div>
+                <div class="capability-grid">
+                    {% for group in profile.skill_groups %}
+                    <article class="capability-tile">
+                        <h3>{{ group.name }}</h3>
+                        <div class="chip-cloud">
+                            {% for item in group["items"] %}
+                            <span>{{ item }}</span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="nexus-panel">
+                <div class="panel-heading">
+                    <p class="section-kicker">Workflow</p>
+                    <h2>Operating Rhythm</h2>
+                </div>
+                <ol class="workflow-line">
+                    {% for item in profile.workflow %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ol>
+            </section>
+
+            <section class="nexus-panel">
+                <div class="panel-heading">
+                    <p class="section-kicker">Experience</p>
+                    <h2>Relevant Work</h2>
+                </div>
+                {% for exp in profile.experience %}
+                <article class="career-record">
+                    <div>
+                        <h3>{{ exp.role }}</h3>
+                        <p>{{ exp.company }} | {{ exp.period }}</p>
+                    </div>
+                    <ul>
+                        {% for highlight in exp.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                </article>
+                {% endfor %}
+            </section>
+
+            <section class="nexus-panel split-panel">
+                <div>
+                    <div class="panel-heading">
+                        <p class="section-kicker">Education</p>
+                        <h2>Foundation</h2>
+                    </div>
+                    {% for item in profile.education %}
+                    <p class="detail-line"><strong>{{ item.institution }}</strong><span>{{ item.degree }} | {{ item.period }}</span></p>
+                    {% endfor %}
+                </div>
+                <div>
+                    <div class="panel-heading">
+                        <p class="section-kicker">Languages</p>
+                        <h2>Communication</h2>
+                    </div>
+                    {% for language in profile.languages %}
+                    <p class="detail-line"><strong>{{ language.name }}</strong><span>{{ language.level }}</span></p>
+                    {% endfor %}
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

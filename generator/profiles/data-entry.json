@@ -1,0 +1,102 @@
+{
+  "name": "Ahmed FS Dev",
+  "job_title": "Data Entry & Data Processing Specialist",
+  "route": "data-entry",
+  "theme": "data",
+  "location": "Cairo, Egypt",
+  "portfolio_url": "https://ahmed-fs-dev-saas.vercel.app/",
+  "positioning": "I turn scattered records, forms, spreadsheets, and operational data into clean, validated, usable information.",
+  "summary_points": [
+    "Detail-oriented data specialist focused on accuracy, consistency, and structured delivery.",
+    "Experienced with spreadsheet workflows, data cleaning, validation, formatting, and organized reporting.",
+    "Comfortable handling repetitive operational tasks with discipline, speed, and quality control.",
+    "Able to support teams by transforming raw inputs into reliable records and clear outputs."
+  ],
+  "focus_areas": [
+    "Data entry accuracy",
+    "Spreadsheet organization",
+    "Data cleaning",
+    "Validation workflows"
+  ],
+  "contacts": [
+    {
+      "type": "email",
+      "label": "ahmedalapiad2@gmail.com",
+      "value": "mailto:ahmedalapiad2@gmail.com"
+    },
+    {
+      "type": "whatsapp",
+      "label": "+20 155 053 4011",
+      "value": "https://wa.me/201550534011"
+    },
+    {
+      "type": "linkedin",
+      "label": "linkedin.com/in/ahmed-fs-dev",
+      "value": "https://www.linkedin.com/in/ahmed-fs-dev"
+    },
+    {
+      "type": "github",
+      "label": "github.com/ahmedalapiad2-bot",
+      "value": "https://github.com/ahmedalapiad2-bot"
+    },
+    {
+      "type": "portfolio",
+      "label": "ahmed-fs-dev-saas.vercel.app",
+      "value": "https://ahmed-fs-dev-saas.vercel.app/"
+    }
+  ],
+  "skill_groups": [
+    {
+      "name": "Data Handling",
+      "items": ["Data entry", "Data cleaning", "Validation", "Formatting", "Record management"]
+    },
+    {
+      "name": "Spreadsheets",
+      "items": ["Excel workflows", "Google Sheets", "Sorting", "Filtering", "Tables"]
+    },
+    {
+      "name": "Quality",
+      "items": ["Accuracy checks", "Duplicate review", "Consistency control", "Error reduction"]
+    },
+    {
+      "name": "Digital Tools",
+      "items": ["CSV files", "PDF extraction", "Online forms", "Database basics", "Documentation"]
+    }
+  ],
+  "languages": [
+    {"name": "English", "level": "Intermediate"},
+    {"name": "Arabic", "level": "Native"}
+  ],
+  "education": [
+    {
+      "institution": "Higher Institute of Administrative Sciences - El Katameya",
+      "degree": "Business Information Systems (BIS)",
+      "period": "2027"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Data Processing & Operations Support",
+      "company": "Independent / Personal Projects",
+      "period": "Late 2024 - Present",
+      "highlights": [
+        "Organized structured project, contact, and operational records across multiple digital products.",
+        "Cleaned and validated lists, metadata, links, and portfolio information for public-facing use.",
+        "Prepared consistent content datasets for automated HTML and PDF generation workflows.",
+        "Reviewed output quality across web and document formats to catch formatting and data issues."
+      ]
+    }
+  ],
+  "workflow": [
+    "Receive raw records",
+    "Clean and normalize fields",
+    "Validate missing or duplicate values",
+    "Format for delivery",
+    "Review final output"
+  ],
+  "achievements": [
+    "Built disciplined data preparation habits through repeated product and resume-generation workflows.",
+    "Improved consistency of public project records by organizing links, stacks, summaries, and contact details.",
+    "Combined technical awareness with patient data review to reduce formatting and content errors."
+  ]
+}
