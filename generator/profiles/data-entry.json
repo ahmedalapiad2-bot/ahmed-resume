@@ -1,22 +1,20 @@
 {
   "name": "Ahmed FS Dev",
   "job_title": "Data Entry & Data Processing Specialist",
-  "route": "data-entry",
-  "theme": "data",
   "location": "Cairo, Egypt",
   "portfolio_url": "https://ahmed-fs-dev-saas.vercel.app/",
-  "positioning": "I turn scattered records, forms, spreadsheets, and operational data into clean, validated, usable information.",
+  "positioning": "I organize, clean, validate, and prepare business data with strong attention to accuracy, structure, and reliable delivery.",
   "summary_points": [
-    "Detail-oriented data specialist focused on accuracy, consistency, and structured delivery.",
-    "Experienced with spreadsheet workflows, data cleaning, validation, formatting, and organized reporting.",
-    "Comfortable handling repetitive operational tasks with discipline, speed, and quality control.",
-    "Able to support teams by transforming raw inputs into reliable records and clear outputs."
+    "Transforming scattered records, spreadsheets, links, and forms into clean structured information.",
+    "Supporting data-heavy workflows through careful entry, formatting, validation, and review.",
+    "Using technical awareness to improve accuracy, consistency, and repeatability in data processing tasks.",
+    "Delivering organized outputs that teams can trust for reporting, operations, and decision-making."
   ],
   "focus_areas": [
-    "Data entry accuracy",
+    "Accurate data entry",
     "Spreadsheet organization",
-    "Data cleaning",
-    "Validation workflows"
+    "Data cleaning and validation",
+    "Reliable digital records"
   ],
   "contacts": [
     {
@@ -47,20 +45,24 @@
   ],
   "skill_groups": [
     {
-      "name": "Data Handling",
-      "items": ["Data entry", "Data cleaning", "Validation", "Formatting", "Record management"]
+      "name": "Data Entry",
+      "items": ["Accurate typing", "Record creation", "Form entry", "Copy editing", "Field formatting"]
+    },
+    {
+      "name": "Processing",
+      "items": ["Data cleaning", "Validation checks", "Duplicate review", "Normalization", "Quality control"]
     },
     {
       "name": "Spreadsheets",
-      "items": ["Excel workflows", "Google Sheets", "Sorting", "Filtering", "Tables"]
-    },
-    {
-      "name": "Quality",
-      "items": ["Accuracy checks", "Duplicate review", "Consistency control", "Error reduction"]
+      "items": ["Excel workflows", "Google Sheets", "Sorting", "Filtering", "CSV handling"]
     },
     {
       "name": "Digital Tools",
-      "items": ["CSV files", "PDF extraction", "Online forms", "Database basics", "Documentation"]
+      "items": ["PDF extraction", "Online research", "Documentation", "Database basics", "File organization"]
+    },
+    {
+      "name": "Professional Habits",
+      "items": ["Attention to detail", "Confidentiality", "Consistency", "Time management", "Clear communication"]
     }
   ],
   "languages": [
@@ -76,27 +78,93 @@
   ],
   "experience": [
     {
-      "role": "Data Processing & Operations Support",
+      "role": "Data Entry & Data Processing Specialist",
       "company": "Independent / Personal Projects",
       "period": "Late 2024 - Present",
       "highlights": [
-        "Organized structured project, contact, and operational records across multiple digital products.",
-        "Cleaned and validated lists, metadata, links, and portfolio information for public-facing use.",
-        "Prepared consistent content datasets for automated HTML and PDF generation workflows.",
-        "Reviewed output quality across web and document formats to catch formatting and data issues."
+        "Organized structured project, contact, portfolio, and operational records across multiple digital products.",
+        "Cleaned and validated links, metadata, feature lists, technology stacks, and resume content for public-facing use.",
+        "Prepared consistent JSON datasets for automated HTML and PDF generation workflows.",
+        "Reviewed generated web and document outputs to catch formatting, spelling, encoding, and data consistency issues.",
+        "Applied spreadsheet-style thinking to sort, group, normalize, and present information clearly.",
+        "Maintained accurate reusable records for profiles, projects, skills, contact details, and portfolio references."
       ]
     }
   ],
-  "workflow": [
-    "Receive raw records",
-    "Clean and normalize fields",
-    "Validate missing or duplicate values",
-    "Format for delivery",
-    "Review final output"
+  "projects": [
+    {
+      "name": "ResumeForge Data Pipeline",
+      "period": "2026",
+      "project_type": "Data Preparation Workflow",
+      "role": "Data Processing Specialist",
+      "summary": "Structured profile and resume data into reusable records for automated website and PDF generation.",
+      "stack": ["JSON", "Spreadsheets", "Data validation", "HTML output", "PDF review"],
+      "features": [
+        "Organized personal profile data into repeatable sections",
+        "Validated contact details, links, skills, and project records",
+        "Reviewed generated outputs for consistency across web and PDF formats"
+      ],
+      "impact": [
+        "Reduced manual editing by keeping content structured",
+        "Improved consistency between multiple resume versions",
+        "Created a reusable foundation for future career-specific profiles"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://ahmed-fs-dev-saas.vercel.app/"
+      }
+    },
+    {
+      "name": "Portfolio Records Cleanup",
+      "period": "2026",
+      "project_type": "Record Organization",
+      "role": "Data Entry & Review",
+      "summary": "Collected, cleaned, and organized portfolio references, project summaries, technology stacks, and external links.",
+      "stack": ["Data entry", "Link checking", "Categorization", "Quality review"],
+      "features": [
+        "Grouped project information by type, role, stack, features, and impact",
+        "Checked public links and formatted records for reuse",
+        "Standardized project summaries for clearer presentation"
+      ],
+      "impact": [
+        "Made project information easier to scan and maintain",
+        "Improved accuracy of public-facing career materials",
+        "Reduced inconsistencies between resume and portfolio content"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://ahmed-fs-dev-saas.vercel.app/"
+      }
+    },
+    {
+      "name": "Operational Data Formatting",
+      "period": "2026",
+      "project_type": "Spreadsheet-Style Workflow",
+      "role": "Data Processing Support",
+      "summary": "Prepared structured service, booking, and workflow information for product and operations-oriented projects.",
+      "stack": ["CSV concepts", "Tables", "Sorting", "Validation", "Documentation"],
+      "features": [
+        "Formatted operational data into clear reusable groups",
+        "Reviewed missing values and inconsistent labels",
+        "Prepared records for clean presentation and future reporting"
+      ],
+      "impact": [
+        "Improved readiness of information for operational workflows",
+        "Supported cleaner product documentation",
+        "Created more reliable source data for generated outputs"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://ahmed-fs-dev-saas.vercel.app/"
+      }
+    }
   ],
   "achievements": [
     "Built disciplined data preparation habits through repeated product and resume-generation workflows.",
-    "Improved consistency of public project records by organizing links, stacks, summaries, and contact details.",
-    "Combined technical awareness with patient data review to reduce formatting and content errors."
+    "Improved consistency of project records by organizing links, stacks, summaries, and contact details.",
+    "Combined technical awareness with careful data review to reduce formatting and content errors."
+  ],
+  "technical_expertise": [
+    "Data Entry", "Excel", "Google Sheets", "CSV", "Data Cleaning", "Validation", "Formatting", "PDF Review", "Documentation", "Quality Control"
   ]
 }

@@ -1,21 +1,19 @@
 {
   "name": "Ahmed FS Dev",
-  "job_title": "Production Assistant - Entry Level",
-  "route": "production",
-  "theme": "production",
+  "job_title": "Production / Manufacturing Assistant",
   "location": "Cairo, Egypt",
   "portfolio_url": "https://ahmed-fs-dev-saas.vercel.app/",
-  "positioning": "I support operational flow with discipline, consistency, quality awareness, and readiness to learn production processes.",
+  "positioning": "I support production environments with discipline, reliability, quality awareness, and a strong ability to follow structured workflows.",
   "summary_points": [
-    "Reliable entry-level production candidate with strong attention to process, timing, and team coordination.",
-    "Comfortable following structured workflows, quality checks, and repeatable operational routines.",
-    "Able to support production environments through organization, focus, and consistent execution.",
-    "Motivated to learn hands-on procedures and contribute to efficient daily operations."
+    "Reliable entry-level production candidate focused on process, consistency, and quality-conscious work.",
+    "Comfortable following repeatable routines, checking outputs, and supporting smooth operational flow.",
+    "Able to learn procedures quickly and contribute to organized team execution.",
+    "Bringing strong digital organization habits and practical workflow thinking into production support."
   ],
   "focus_areas": [
-    "Operational discipline",
+    "Production workflow",
     "Quality awareness",
-    "Workflow support",
+    "Process discipline",
     "Team coordination"
   ],
   "contacts": [
@@ -47,20 +45,24 @@
   ],
   "skill_groups": [
     {
-      "name": "Operations",
-      "items": ["Workflow support", "Task discipline", "Process following", "Time awareness"]
+      "name": "Production Support",
+      "items": ["Process following", "Task discipline", "Workstation readiness", "Shift reliability", "Output tracking"]
     },
     {
       "name": "Quality",
-      "items": ["Visual checks", "Consistency", "Issue reporting", "Clean handoff"]
+      "items": ["Visual checks", "Consistency review", "Issue reporting", "Clean handoff", "Safety awareness"]
     },
     {
-      "name": "Teamwork",
-      "items": ["Communication", "Reliability", "Learning speed", "Shift readiness"]
+      "name": "Operations",
+      "items": ["Workflow stages", "Scheduling awareness", "Team coordination", "Documentation", "Time management"]
     },
     {
       "name": "Digital Awareness",
-      "items": ["Documentation", "Basic data tracking", "Online tools", "Report preparation"]
+      "items": ["Basic data tracking", "Online tools", "Report preparation", "File organization", "Process records"]
+    },
+    {
+      "name": "Professional Habits",
+      "items": ["Reliability", "Learning speed", "Communication", "Focus", "Responsibility"]
     }
   ],
   "languages": [
@@ -76,27 +78,93 @@
   ],
   "experience": [
     {
-      "role": "Operations-Oriented Project Builder",
+      "role": "Production & Operations Support Candidate",
       "company": "Independent / Personal Projects",
       "period": "Late 2024 - Present",
       "highlights": [
         "Built structured workflows for booking, service handling, and operational management projects.",
-        "Practiced organizing tasks into clear stages with consistent inputs, outputs, and quality checks.",
-        "Worked with process-driven product ideas involving scheduling, customer requests, and delivery flow.",
-        "Developed a reliability-focused approach to documentation, repeatable routines, and final review."
+        "Practiced organizing work into clear stages with defined inputs, outputs, checks, and handoffs.",
+        "Worked with process-driven product ideas involving scheduling, customer requests, delivery flow, and status tracking.",
+        "Developed a reliability-focused approach to documentation, repeatable routines, and final review.",
+        "Used digital tools to track tasks, structure information, and prepare consistent operational records.",
+        "Built readiness for production environments through process thinking, quality awareness, and disciplined execution."
       ]
     }
   ],
-  "workflow": [
-    "Prepare work area",
-    "Follow process stage",
-    "Check quality indicators",
-    "Coordinate handoff",
-    "Report completion"
+  "projects": [
+    {
+      "name": "CleanEx Operations Flow",
+      "period": "2026",
+      "project_type": "Service Operations Workflow",
+      "role": "Operations Support",
+      "summary": "Structured a service booking and operations workflow around request intake, scheduling, customer handling, and delivery tracking.",
+      "stack": ["Workflow mapping", "Scheduling logic", "Service records", "Quality review"],
+      "features": [
+        "Mapped a multi-step flow for service requests",
+        "Organized customer, schedule, and service information",
+        "Prepared the workflow for future admin and operations expansion"
+      ],
+      "impact": [
+        "Improved understanding of operational handoffs",
+        "Created a clearer process for request handling",
+        "Supported reliable service delivery through structured records"
+      ],
+      "links": {
+        "github": "https://github.com/ahmedalapiad2-bot",
+        "portfolio": "https://ahmed-fs-dev-saas.vercel.app/"
+      }
+    },
+    {
+      "name": "SmartOrder Process Coordination",
+      "period": "2026",
+      "project_type": "Restaurant Operations System",
+      "role": "Workflow Organizer",
+      "summary": "Designed operational thinking for restaurant ordering, customer requests, admin control, and live service monitoring.",
+      "stack": ["Order flow", "Status tracking", "Admin records", "Monitoring"],
+      "features": [
+        "Organized order and service states into clear process stages",
+        "Supported admin visibility into activity and workflow status",
+        "Structured customer-facing and operations-facing information"
+      ],
+      "impact": [
+        "Improved service flow clarity",
+        "Reduced confusion between customer request stages",
+        "Strengthened awareness of real-time operations"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://ahmed-fs-dev-saas.vercel.app/"
+      }
+    },
+    {
+      "name": "Production Readiness Tracker",
+      "period": "2026",
+      "project_type": "Quality & Task Tracking",
+      "role": "Process Support",
+      "summary": "Created a structured approach for tracking tasks, checking completion, reviewing quality, and preparing reliable handoffs.",
+      "stack": ["Task records", "Quality checks", "Documentation", "Progress tracking"],
+      "features": [
+        "Grouped tasks by stage, status, and completion",
+        "Prepared repeatable checklists for quality review",
+        "Documented outputs for cleaner handoff"
+      ],
+      "impact": [
+        "Improved consistency in task completion",
+        "Made operational status easier to review",
+        "Supported disciplined and reliable workflows"
+      ],
+      "links": {
+        "github": "",
+        "portfolio": "https://ahmed-fs-dev-saas.vercel.app/"
+      }
+    }
   ],
   "achievements": [
     "Demonstrated strong process thinking through service, booking, and operations platform projects.",
     "Built comfort with structured routines, documentation, and quality-conscious delivery.",
-    "Combined technical organization with practical reliability and a readiness to learn."
+    "Combined digital organization with practical reliability and readiness to learn production work."
+  ],
+  "technical_expertise": [
+    "Workflow Support", "Quality Checks", "Documentation", "Task Tracking", "Scheduling Awareness", "Team Coordination", "Time Management", "Operations Records"
   ]
 }

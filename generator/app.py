@@ -45,6 +45,7 @@ class ResumeGenerator:
             self._prepare_output_dirs(output_dir)
             self._copy_static_assets(output_dir)
             self._copy_profile_image_if_present(output_dir)
+            self._apply_route_theme_assets(output_dir, self._profile_route_name(profile_path))
 
             rendered_html = self.render_html(profile_path)
             output_name = self._output_name()
@@ -96,17 +97,10 @@ class ResumeGenerator:
 
     def render_html(self, profile_path: Path) -> str:
         route_name = self._profile_route_name(profile_path)
-        template_name = "modern.html" if route_name == "software" else "career.html"
-        template = self.env.get_template(template_name)
-        if template_name == "career.html":
-            return template.render(
-                profile=self.profile,
-                theme=self.profile.get("theme", route_name),
-                label=self._world_label(route_name),
-                pdf_name=f"{self._output_name()}_Resume.pdf",
-            )
+        template = self.env.get_template("modern.html")
         return template.render(
             profile=self.profile,
+            route_name=route_name,
             has_profile_image=self._has_profile_image(),
             profile_image_path="assets/profile.jpg" if self._has_profile_image() else None,
             contact_items=self.profile.get("contacts", []),
@@ -235,6 +229,34 @@ class ResumeGenerator:
     def _copy_profile_image_if_present(self, output_dir: Path) -> None:
         if self._has_profile_image():
             shutil.copy2(ASSETS_DIR / "profile.jpg", output_dir / "assets" / "profile.jpg")
+
+    def _apply_route_theme_assets(self, output_dir: Path, route_name: str) -> None:
+        theme = {
+            "data-entry": {
+                "#2f6fed": "#12a87b",
+                "#1f4fd3": "#0b7d62",
+                "#5d98ff": "#39d9a3",
+                "#e7f0ff": "#e5fbf2",
+                "#1448a8": "#087257",
+            },
+            "production": {
+                "#2f6fed": "#d58a18",
+                "#1f4fd3": "#9a5a0f",
+                "#5d98ff": "#ffbf55",
+                "#e7f0ff": "#fff2d8",
+                "#1448a8": "#8a4f0c",
+            },
+        }.get(route_name)
+        if not theme:
+            return
+
+        style_path = output_dir / "static" / "style.css"
+        if not style_path.exists():
+            return
+        css = style_path.read_text(encoding="utf-8")
+        for source, replacement in theme.items():
+            css = css.replace(source, replacement)
+        style_path.write_text(css, encoding="utf-8")
 
     def _has_profile_image(self) -> bool:
         return (ASSETS_DIR / "profile.jpg").exists()

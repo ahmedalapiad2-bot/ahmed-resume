@@ -4,8 +4,8 @@
   --surface-2: #f8fbff;
   --text: #122033;
   --muted: #5f6f81;
-  --accent: #2f6fed;
-  --accent-soft: #e7f0ff;
+  --accent: #d58a18;
+  --accent-soft: #fff2d8;
   --border: #e4eaf3;
   --shadow: 0 18px 44px rgba(18, 32, 51, 0.08);
 }
@@ -223,7 +223,7 @@ h2 {
 
 .chip {
   background: var(--accent-soft);
-  color: #1448a8;
+  color: #8a4f0c;
   padding: 7px 10px;
   border-radius: 999px;
   font-size: 0.8rem;
@@ -352,7 +352,7 @@ h2 {
 
 .project-visual {
   padding: 18px 18px 16px;
-  background: linear-gradient(135deg, #1f4fd3 0%, #5d98ff 100%);
+  background: linear-gradient(135deg, #9a5a0f 0%, #ffbf55 100%);
   color: #ffffff;
   display: flex;
   flex-direction: column;
