@@ -343,11 +343,11 @@ class ResumeGenerator:
         if not profiles:
             return []
         labels = {
-            "email": ("Email", "✉"),
-            "whatsapp": ("WhatsApp", "◉"),
-            "linkedin": ("LinkedIn", "in"),
-            "github": ("GitHub", "⌘"),
-            "portfolio": ("Portfolio", "◎"),
+            "email": ("Email", '<i class="fa-solid fa-envelope"></i>'),
+            "whatsapp": ("WhatsApp", '<i class="fa-brands fa-whatsapp"></i>'),
+            "linkedin": ("LinkedIn", '<i class="fa-brands fa-linkedin"></i>'),
+            "github": ("GitHub", '<i class="fa-brands fa-github"></i>'),
+            "portfolio": ("Portfolio", '<i class="fa-solid fa-briefcase"></i>'),
         }
         contacts = profiles[0][1].get("contacts", [])
         items = []

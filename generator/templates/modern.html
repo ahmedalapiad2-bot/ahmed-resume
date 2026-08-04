@@ -92,7 +92,8 @@
 
 <body>
     {% set icon_map = {'email': 'fa-solid fa-envelope', 'whatsapp': 'fa-brands fa-whatsapp', 'linkedin': 'fa-brands
-    fa-linkedin', 'github': 'fa-brands fa-github', 'portfolio': 'fa-solid fa-globe'} %}
+    fa-linkedin', 'github': 'fa-brands fa-github', 'portfolio': 'fa-solid fa-briefcase', 'website': 'fa-solid fa-globe',
+    'pdf': 'fa-regular fa-file-pdf'} %}
     {% set label_map = {'email': 'Email', 'whatsapp': 'WhatsApp', 'linkedin': 'LinkedIn', 'github': 'GitHub',
     'portfolio': 'Portfolio'} %}
     <main class="resume-shell">
@@ -168,11 +169,17 @@
                 <p class="hero-position">{{ profile.positioning }}</p>
                 <div class="hero-links">
                     {% for item in contact_items %}
-                    <a class="hero-link action-btn" href="{{ item.value }}" target="_blank" rel="noopener noreferrer">{{
-                        label_map[item.type] or item.type|title }}</a>
+                    <a class="hero-link action-btn" href="{{ item.value }}" target="_blank" rel="noopener noreferrer">
+                        <span class="action-icon" aria-hidden="true"><i
+                                class="{{ icon_map[item.type] or 'fa-solid fa-arrow-up-right-from-square' }}"></i></span>
+                        <span>{{ label_map[item.type] or item.type|title }}</span>
+                    </a>
                     {% endfor %}
                     <a class="hero-link hero-link-primary action-btn" href="{{ profile.portfolio_url }}" target="_blank"
-                        rel="noopener noreferrer">Website</a>
+                        rel="noopener noreferrer">
+                        <span class="action-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></span>
+                        <span>Website</span>
+                    </a>
                 </div>
             </header>
 

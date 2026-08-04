@@ -270,16 +270,18 @@ a {
 .gateway-hero::before {
   width: min(560px, 52vw);
   height: min(560px, 52vw);
-  left: -12%;
+  left: 0;
   top: 5%;
+  transform: translateX(-22%);
   background: radial-gradient(circle, rgba(47, 111, 237, 0.16), transparent 66%);
 }
 
 .gateway-hero::after {
   width: min(480px, 42vw);
   height: min(480px, 42vw);
-  right: -10%;
+  right: 0;
   top: 4%;
+  transform: translateX(20%);
   background: radial-gradient(circle, rgba(255, 255, 255, 0.88), rgba(47, 111, 237, 0.18) 42%, transparent 70%);
 }
 
@@ -359,6 +361,14 @@ a {
   box-shadow: 0 16px 38px rgba(47, 111, 237, 0.14), 0 1px 0 rgba(255, 255, 255, 0.92) inset;
 }
 
+.hero-actions .action-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
 .hero-portrait {
   position: relative;
 }
@@ -366,7 +376,7 @@ a {
 .hero-portrait::before {
   content: "";
   position: absolute;
-  inset: -28px -26px 22px;
+  inset: 0;
   z-index: -1;
   border-radius: 28px;
   background:
@@ -374,6 +384,7 @@ a {
     radial-gradient(circle at 50% 60%, rgba(47, 111, 237, 0.3), transparent 64%);
   filter: blur(2px);
   opacity: 0.86;
+  transform: scale(1.12) translateY(-10px);
 }
 
 .portrait-frame {

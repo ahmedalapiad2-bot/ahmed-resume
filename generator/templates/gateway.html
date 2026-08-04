@@ -34,6 +34,7 @@
         content="Choose a focused professional resume: software engineering, data entry and data processing, or production and manufacturing." />
     <meta property="twitter:image" content="https://ahmed-resume-2ega.vercel.app/static/og-image.png" />
     <meta name="google-site-verification" content="hWuee7DfP-CWs4ocBueNSAfVMG2nxgl8_W5rku2vRKg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="static/nexus.css" />
     <script src="static/nexus.js" defer></script>
 </head>
@@ -65,10 +66,14 @@
                 <div class="hero-actions" aria-label="Contact links">
                     {% for item in contacts %}
                     <a href="{{ item.value }}" target="_blank" rel="noopener noreferrer">
-                        <span aria-hidden="true">{{ item.icon }}</span>{{ item.label }}
+                        <span class="action-icon" aria-hidden="true">{{ item.icon|safe }}</span>
+                        <span>{{ item.label }}</span>
                     </a>
                     {% endfor %}
-                    <a href="Career_Nexus.pdf"><span aria-hidden="true">▣</span>PDF</a>
+                    <a href="Career_Nexus.pdf">
+                        <span class="action-icon" aria-hidden="true"><i class="fa-regular fa-file-pdf"></i></span>
+                        <span>PDF</span>
+                    </a>
                 </div>
             </section>
 
