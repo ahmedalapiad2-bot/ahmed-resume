@@ -33,9 +33,11 @@ body.nexus-page {
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--active-soft), transparent 30%),
-    radial-gradient(circle at 70% 16%, rgba(47, 111, 237, 0.2), transparent 34%),
-    linear-gradient(135deg, #ffffff 0%, #f6f9ff 45%, #eaf2ff 100%);
+    radial-gradient(circle at var(--mouse-x) var(--mouse-y), color-mix(in srgb, var(--active-soft) 84%, transparent), transparent 28%),
+    radial-gradient(circle at 74% 18%, rgba(47, 111, 237, 0.24), transparent 32%),
+    radial-gradient(circle at 24% 46%, rgba(18, 168, 123, 0.08), transparent 30%),
+    radial-gradient(circle at 82% 82%, rgba(213, 138, 24, 0.08), transparent 34%),
+    linear-gradient(135deg, #ffffff 0%, #f7faff 42%, #eaf2ff 100%);
   overflow-x: hidden;
 }
 
@@ -219,11 +221,17 @@ a {
   inset: 120px -4% auto;
   height: 380px;
   background:
+    radial-gradient(circle at 18% 32%, rgba(47, 111, 237, 0.2) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(47, 111, 237, 0.16) 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 72%, rgba(18, 168, 123, 0.12) 0 2px, transparent 3px),
     linear-gradient(90deg, transparent 0 16%, rgba(47, 111, 237, 0.1) 16.2%, transparent 16.4%),
     linear-gradient(90deg, transparent 0 28%, rgba(47, 111, 237, 0.08) 28.2%, transparent 28.4%),
-    linear-gradient(90deg, transparent 0 74%, rgba(47, 111, 237, 0.1) 74.2%, transparent 74.4%);
+    linear-gradient(90deg, transparent 0 74%, rgba(47, 111, 237, 0.1) 74.2%, transparent 74.4%),
+    linear-gradient(180deg, transparent 0 46%, rgba(47, 111, 237, 0.07) 46.2%, transparent 46.4%);
+  background-size: 220px 180px, 260px 220px, 310px 260px, auto, auto, auto, auto;
   mask-image: linear-gradient(90deg, transparent, black 16%, black 84%, transparent);
   opacity: 0.78;
+  animation: ambientDrift 18s ease-in-out infinite alternate;
 }
 
 .ambient-field::after {
@@ -236,15 +244,45 @@ a {
   background-size: auto, 32px 32px, 32px 32px;
   transform: perspective(800px) rotateX(62deg);
   transform-origin: bottom;
+  opacity: 0.82;
 }
 
 .gateway-hero {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
   gap: clamp(28px, 6vw, 86px);
   align-items: center;
   min-height: 510px;
   padding: 0 0 clamp(34px, 5vw, 70px);
+}
+
+.gateway-hero::before,
+.gateway-hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(8px);
+}
+
+.gateway-hero::before {
+  width: min(560px, 52vw);
+  height: min(560px, 52vw);
+  left: 0;
+  top: 5%;
+  transform: translateX(-22%);
+  background: radial-gradient(circle, rgba(47, 111, 237, 0.16), transparent 66%);
+}
+
+.gateway-hero::after {
+  width: min(480px, 42vw);
+  height: min(480px, 42vw);
+  right: 0;
+  top: 4%;
+  transform: translateX(20%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.88), rgba(47, 111, 237, 0.18) 42%, transparent 70%);
 }
 
 .hero-copy {
@@ -311,8 +349,8 @@ a {
   text-decoration: none;
   font-size: 0.86rem;
   font-weight: 800;
-  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.08), 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .hero-actions a:hover,
@@ -320,10 +358,25 @@ a {
   border-color: color-mix(in srgb, var(--active) 48%, var(--border));
   background: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(47, 111, 237, 0.14), 0 1px 0 rgba(255, 255, 255, 0.92) inset;
 }
 
 .hero-portrait {
   position: relative;
+}
+
+.hero-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 62% 18%, rgba(255, 255, 255, 0.86), transparent 34%),
+    radial-gradient(circle at 50% 60%, rgba(47, 111, 237, 0.3), transparent 64%);
+  filter: blur(2px);
+  opacity: 0.86;
+  transform: scale(1.12) translateY(-10px);
 }
 
 .portrait-frame {
@@ -333,7 +386,21 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   background: #ffffff;
-  box-shadow: var(--shadow-strong), 0 0 0 1px rgba(47, 111, 237, 0.16);
+  box-shadow:
+    0 38px 92px rgba(7, 18, 37, 0.22),
+    0 18px 46px rgba(47, 111, 237, 0.16),
+    0 0 0 1px rgba(47, 111, 237, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76);
+  transition: transform 260ms ease, box-shadow 260ms ease;
+}
+
+.hero-portrait:hover .portrait-frame {
+  transform: translateY(-3px);
+  box-shadow:
+    0 44px 104px rgba(7, 18, 37, 0.24),
+    0 24px 58px rgba(47, 111, 237, 0.2),
+    0 0 0 1px rgba(47, 111, 237, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
 }
 
 .portrait-frame::before {
@@ -444,13 +511,17 @@ a {
   border: 1px solid color-mix(in srgb, var(--active) 28%, rgba(255, 255, 255, 0.9));
   border-radius: 16px;
   background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0) 30%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68)),
     radial-gradient(circle at 50% 0, var(--active-soft), transparent 58%);
-  box-shadow: 0 22px 64px rgba(17, 24, 39, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 28px 78px rgba(17, 24, 39, 0.1),
+    0 2px 8px rgba(17, 24, 39, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86);
   padding: 22px;
   color: var(--text);
   text-decoration: none;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
 }
 
 .theme-software {
@@ -471,7 +542,10 @@ a {
 .career-card:hover,
 .career-card:focus-visible {
   border-color: color-mix(in srgb, var(--active) 54%, var(--border));
-  box-shadow: 0 26px 70px rgba(17, 24, 39, 0.13), 0 0 50px var(--active-soft);
+  box-shadow:
+    0 34px 88px rgba(17, 24, 39, 0.14),
+    0 0 58px var(--active-soft),
+    inset 0 1px 0 rgba(255, 255, 255, 0.94);
   transform: translateY(-6px);
   outline: none;
 }
@@ -503,9 +577,12 @@ a {
   border-radius: 12px;
   background:
     radial-gradient(circle at 20% 15%, var(--active-soft), transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(255, 255, 255, 0.94), transparent 28%),
     linear-gradient(135deg, #ffffff, #f6f9ff);
   padding: 18px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 16px 38px rgba(17, 24, 39, 0.04),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.76);
 }
 
 .profession-preview::before,
@@ -537,11 +614,38 @@ a {
   bottom: 38px;
   display: grid;
   gap: 9px;
+  overflow: hidden;
+  border: 1px solid rgba(144, 180, 255, 0.14);
   border-radius: 11px;
-  background: #071225;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 22px),
+    #071225;
   color: #dbe8ff;
-  padding: 18px 20px;
-  box-shadow: 0 22px 44px rgba(7, 18, 37, 0.28), 0 0 36px rgba(47, 111, 237, 0.2);
+  padding: 24px 20px 16px;
+  box-shadow: 0 22px 44px rgba(7, 18, 37, 0.28), 0 0 36px rgba(47, 111, 237, 0.22);
+}
+
+.code-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff6b6b;
+  box-shadow: 12px 0 0 #ffd166, 24px 0 0 #38d99c;
+  opacity: 0.9;
+}
+
+.code-card::after {
+  content: "";
+  position: absolute;
+  inset: 24px 0 auto;
+  height: 38px;
+  background: linear-gradient(90deg, transparent, rgba(115, 164, 255, 0.08), transparent);
+  transform: translateX(-100%);
+  animation: codeScan 5.8s ease-in-out infinite;
 }
 
 .code-card i {
@@ -554,6 +658,19 @@ a {
 .code-card i:nth-child(2) { color: #73a4ff; }
 .code-card i:nth-child(3) { color: #d48eff; }
 .code-card i:nth-child(4) { color: #ffffff; }
+
+.code-card i:nth-child(4)::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 1em;
+  margin-left: 5px;
+  border-radius: 2px;
+  background: #73a4ff;
+  vertical-align: -0.16em;
+  box-shadow: 0 0 16px rgba(115, 164, 255, 0.72);
+  animation: cursorBlink 1.1s steps(2, start) infinite;
+}
 
 .language-stack {
   position: absolute;
@@ -575,6 +692,17 @@ a {
   color: var(--active);
   box-shadow: 0 12px 28px var(--active-soft), inset 0 1px 0 #ffffff;
   font-size: 0.78rem;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.career-card:hover .language-stack b,
+.career-card:focus-visible .language-stack b {
+  transform: translateX(-2px);
+}
+
+.career-card:hover .language-stack b:nth-child(2),
+.career-card:focus-visible .language-stack b:nth-child(2) {
+  transform: translateX(2px);
 }
 
 .data-flow {
@@ -583,6 +711,22 @@ a {
   bottom: 60px;
   display: grid;
   gap: 10px;
+}
+
+.data-flow::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 42px;
+  width: 2px;
+  height: 92px;
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--active) 42%, transparent), transparent);
+  animation: dataPulse 3.8s ease-in-out infinite;
+}
+
+.data-flow i {
+  position: relative;
+  z-index: 1;
 }
 
 .data-table {
@@ -596,7 +740,16 @@ a {
   overflow: hidden;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.1);
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.1), 0 0 28px rgba(18, 168, 123, 0.1);
+}
+
+.data-table::after {
+  content: "";
+  position: absolute;
+  inset: 34px 0 auto;
+  height: 30px;
+  background: linear-gradient(90deg, transparent, rgba(18, 168, 123, 0.12), transparent);
+  animation: rowSweep 4.4s ease-in-out infinite;
 }
 
 .data-table b,
@@ -633,7 +786,21 @@ a {
   right: 24px;
   top: 50%;
   height: 2px;
-  background: linear-gradient(90deg, var(--active), color-mix(in srgb, var(--active) 16%, transparent));
+  background: linear-gradient(90deg, color-mix(in srgb, var(--active) 72%, transparent), color-mix(in srgb, var(--active) 16%, transparent));
+  box-shadow: 0 0 18px color-mix(in srgb, var(--active) 18%, transparent);
+}
+
+.process-flow::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--active);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--active) 70%, transparent);
+  animation: pipelineMove 3.9s ease-in-out infinite;
 }
 
 .process-flow i {
@@ -650,7 +817,7 @@ a {
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.88);
   padding: 12px;
-  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.12);
+  box-shadow: 0 18px 40px rgba(17, 24, 39, 0.12), 0 0 32px rgba(213, 138, 24, 0.1);
 }
 
 .kpi-card b {
@@ -690,6 +857,13 @@ a {
   color: var(--active);
   box-shadow: 0 12px 28px rgba(17, 24, 39, 0.08), inset 0 1px 0 #ffffff;
   font-weight: 900;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.career-card:hover .corner-icon,
+.career-card:focus-visible .corner-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px var(--active-soft), inset 0 1px 0 #ffffff;
 }
 
 .card-content {
@@ -716,6 +890,88 @@ a {
 
 .card-content span:not(.card-index) {
   color: var(--muted);
+}
+
+@keyframes ambientDrift {
+  from {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  to {
+    transform: translate3d(10px, -8px, 0);
+  }
+}
+
+@keyframes codeScan {
+  0%,
+  42% {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+
+  52% {
+    opacity: 1;
+  }
+
+  78%,
+  100% {
+    transform: translateX(110%);
+    opacity: 0;
+  }
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes dataPulse {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scaleY(0.62);
+  }
+
+  50% {
+    opacity: 0.78;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes rowSweep {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  18%,
+  72% {
+    opacity: 1;
+  }
+
+  82% {
+    transform: translateY(62px);
+    opacity: 0;
+  }
+}
+
+@keyframes pipelineMove {
+  0% {
+    transform: translateX(0) scale(0.86);
+    opacity: 0;
+  }
+
+  14%,
+  84% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(clamp(160px, 18vw, 250px)) scale(0.86);
+    opacity: 0;
+  }
 }
 
 .pdf-document {
