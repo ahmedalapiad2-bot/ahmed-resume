@@ -53,8 +53,50 @@
             <a href="data-entry/">Data</a>
             <a href="production/">Production</a>
         </nav>
-        <a class="download-pill" href="Career_Nexus.pdf"><span aria-hidden="true">↓</span> Download PDF</a>
+        <button class="download-pill download-cv" type="button" aria-haspopup="dialog" aria-expanded="false">
+            <span aria-hidden="true">↓</span> Download CV
+        </button>
     </header>
+
+    <div class="download-modal" role="dialog" aria-modal="true" aria-labelledby="cv-dialog-title"
+        aria-describedby="cv-dialog-description" hidden>
+        <div class="download-modal__backdrop" data-modal-close></div>
+        <div class="download-modal__panel">
+            <div class="download-modal__header">
+                <div>
+                    <p class="eyebrow">Choose your CV</p>
+                    <h2 id="cv-dialog-title">Select the career version you want to download.</h2>
+                </div>
+                <button class="download-modal__close" type="button" aria-label="Close CV selector">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="download-options" id="cv-dialog-description">
+                <a class="download-option theme-software" href="/software/Ahmed_Resume.pdf">
+                    <span class="download-option__meta">
+                        <span class="download-option__index">01</span>
+                        <span class="download-option__label">Software Engineering</span>
+                    </span>
+                    <span class="download-option__description">Software development, AI, automation & systems</span>
+                </a>
+                <a class="download-option theme-data" href="/data-entry/Ahmed_Resume.pdf">
+                    <span class="download-option__meta">
+                        <span class="download-option__index">02</span>
+                        <span class="download-option__label">Data Entry & Data Processing</span>
+                    </span>
+                    <span class="download-option__description">Data entry, data cleaning, validation & processing</span>
+                </a>
+                <a class="download-option theme-production" href="/production/Ahmed_Resume.pdf">
+                    <span class="download-option__meta">
+                        <span class="download-option__index">03</span>
+                        <span class="download-option__label">Production</span>
+                    </span>
+                    <span class="download-option__description">Production support, operations, quality & workflow</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <main class="nexus-shell" data-nexus-root>
         <div class="ambient-field" aria-hidden="true"></div>
 

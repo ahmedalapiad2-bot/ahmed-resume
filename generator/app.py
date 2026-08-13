@@ -150,7 +150,7 @@ class ResumeGenerator:
                     prefer_css_page_size=True,
                     display_header_footer=False,
                     outline=outline,
-                    tagged=True,
+                    tagged=False,
                 )
                 browser.close()
         except Exception:
