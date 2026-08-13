@@ -1174,3 +1174,117 @@ a {
     transition-duration: 1ms !important;
   }
 }
+
+/* Download CV modal — minimal, authoritative styles */
+.download-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 80;
+}
+.download-modal[hidden] {
+  display: none;
+}
+.download-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.54);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1;
+}
+.download-modal__panel {
+  position: relative;
+  z-index: 2;
+  background: var(--surface-strong);
+  color: var(--text);
+  border-radius: var(--radius);
+  max-width: 880px;
+  width: min(92%, 880px);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.download-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.download-modal__close {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 6px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.98rem;
+}
+.download-modal__close:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--active) 52%, transparent);
+  outline-offset: 3px;
+}
+.download-options {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.download-option {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.78));
+  border: 1px solid rgba(17, 24, 39, 0.04);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+.download-option:hover,
+.download-option:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(17,24,39,0.08), 0 0 28px color-mix(in srgb, var(--active) 14%, transparent);
+  border-color: color-mix(in srgb, var(--active) 28%, rgba(17,24,39,0.06));
+}
+.download-option__meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.download-option__index {
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--active);
+}
+.theme-software .download-option__index { color: var(--software); }
+.theme-data .download-option__index { color: var(--data); }
+.theme-production .download-option__index { color: var(--production); }
+.download-option__label {
+  font-weight: 900;
+}
+.download-option__description {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 820px) {
+  .download-modal__panel { width: min(96%, 520px); padding: 16px; }
+  .download-options { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .download-option,
+  .download-modal__panel {
+    transition: none !important;
+    animation: none !important;
+  }
+}
